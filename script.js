@@ -1,6 +1,6 @@
 "use strict";
 const T = {
-  en: {tag:"Smart Tender Document Package Builder",loadReq:"Load requirements.json",loadReqHint:"Drop the file here or click to browse",upload:"Upload PDF documents",uploadHint:"Drop up to 30 PDFs (max 50 MB total) or click to browse",reset:"Reset",suggest:"Suggest Matches",gen:"Generate Package",
+  en: {tag:"Navigate Every Tender with Confidence",loadReq:"Load requirements.json",loadReqHint:"Drop the file here or click to browse",upload:"Upload PDF documents",uploadHint:"Drop up to 30 PDFs (max 50 MB total) or click to browse",reset:"Reset",suggest:"Suggest Matches",gen:"Generate Package",
     steps:["Requirements","Upload","Match","Validate","Generate"],tid:"Tender ID",ttl:"Tender Title",ent:"Procuring Entity",bid:"Bidder",dl:"Submission Deadline",
     k:["Total Requirements","Mandatory","Matched","Blocking Issues","Ready"],h:["Order","Document","Requirement","Matched File","Expiry","Status","Action"],
     mand:"Mandatory",opt:"Optional",exp:"Expiry required",none:"— Not matched —",
@@ -13,7 +13,7 @@ const T = {
     bad:"Cannot read this PDF (damaged or password protected).",dupBlock:"Identical content is already assigned to another requirement.",
     confirm:"Reset all matches and expiry dates?",done:"Package downloaded: ",suggested:n=>n+" match(es) suggested.",noSug:"No confident suggestions found.",
     needReq:"Load requirements first",missingDocs:"Missing required documents",expNeeded:"Expiry date required",expiredDocs:"Expired documents"},
-  bn: {tag:"স্মার্ট টেন্ডার ডকুমেন্ট প্যাকেজ বিল্ডার",loadReq:"requirements.json লোড করুন",loadReqHint:"ফাইলটি এখানে ছাড়ুন বা ক্লিক করুন",upload:"PDF ডকুমেন্ট আপলোড করুন",uploadHint:"সর্বোচ্চ ৩০টি PDF (মোট ৫০ MB) ছাড়ুন বা ক্লিক করুন",reset:"রিসেট",suggest:"মিল প্রস্তাব করুন",gen:"প্যাকেজ তৈরি করুন",
+  bn: {tag:"আত্মবিশ্বাসের সাথে প্রতিটি টেন্ডারে এগিয়ে চলুন",loadReq:"requirements.json লোড করুন",loadReqHint:"ফাইলটি এখানে ছাড়ুন বা ক্লিক করুন",upload:"PDF ডকুমেন্ট আপলোড করুন",uploadHint:"সর্বোচ্চ ৩০টি PDF (মোট ৫০ MB) ছাড়ুন বা ক্লিক করুন",reset:"রিসেট",suggest:"মিল প্রস্তাব করুন",gen:"প্যাকেজ তৈরি করুন",
     steps:["প্রয়োজনীয়তা","আপলোড","মিলান","যাচাই","তৈরি"],tid:"টেন্ডার আইডি",ttl:"টেন্ডারের শিরোনাম",ent:"ক্রয়কারী প্রতিষ্ঠান",bid:"দরদাতা",dl:"জমার শেষ তারিখ",
     k:["মোট প্রয়োজনীয়তা","বাধ্যতামূলক","মিলানো হয়েছে","বাধাদায়ক সমস্যা","প্রস্তুত"],h:["ক্রম","ডকুমেন্ট","প্রয়োজনীয়তা","মিলানো ফাইল","মেয়াদ","অবস্থা","কাজ"],
     mand:"বাধ্যতামূলক",opt:"ঐচ্ছিক",exp:"মেয়াদ প্রয়োজন",none:"— মিলানো হয়নি —",
