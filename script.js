@@ -1,25 +1,25 @@
 "use strict";
 const T = {
-  en: {tag:"Smart Tender Package Builder",loadReq:"Load requirements.json",loadReqHint:"Drop the file here or click to browse",upload:"Upload PDF documents",uploadHint:"Drop up to 30 PDFs (max 50 MB total) or click to browse",reset:"Reset",suggest:"Suggest Matches",gen:"Generate Package",
+  en: {tag:"Smart Tender Document Package Builder",loadReq:"Load requirements.json",loadReqHint:"Drop the file here or click to browse",upload:"Upload PDF documents",uploadHint:"Drop up to 30 PDFs (max 50 MB total) or click to browse",reset:"Reset",suggest:"Suggest Matches",gen:"Generate Package",
     steps:["Requirements","Upload","Match","Validate","Generate"],tid:"Tender ID",ttl:"Tender Title",ent:"Procuring Entity",bid:"Bidder",dl:"Submission Deadline",
-    k:["Total Requirements","Mandatory","Matched","Blocking Issues","Ready"],h:["#","Document","Requirement","File","Expiry","Status"],
+    k:["Total Requirements","Mandatory","Matched","Blocking Issues","Ready"],h:["Order","Document","Requirement","Matched File","Expiry","Status","Action"],
     mand:"Mandatory",opt:"Optional",exp:"Expiry required",none:"— Not matched —",
     st:{Missing:"Missing",ExpiryNeeded:"Expiry date needed",Expired:"Expired",NotProvided:"Not provided",OK:"OK"},
     ready:"READY",notready:"NOT READY",readyTxt:"All checks passed. You can generate the package.",blocking:n=>n+" blocking issue(s)",
-    empty:"Load requirements.json to begin.",noFiles:"No PDFs yet. Upload documents to continue.",
+    empty:"Load requirements.json to begin.",undo:"Undo",expLabel:"Expiry date",sub:"Prepare, validate and generate a submission-ready tender package.",genH:"Package Generated Successfully",fn:"Filename",pg:"Pages",dc:"Documents",dlb:"Download Package",cls:"Close",gen2:"GENERATED",rg:"READY TO GENERATE",stM:"Missing",stE:"Expiry problem",validF:"Valid",invalidF:"Invalid",mtd:"Matched",noFiles:"No PDFs yet. Upload documents to continue.",
     matched:"Matched →",unmatched:"Unmatched",dup:"Duplicate",pages:"pages",remove:"Remove",
     sel:(n,s)=>n+" / 30 files · "+s+" MB / 50 MB",
     errJson:"Invalid requirements.json: ",notPdf:" is not a PDF and was rejected.",tooMany:"Limit is 30 files. Extra files rejected.",tooBig:"Total size limit of 50 MB exceeded. File rejected: ",
     bad:"Cannot read this PDF (damaged or password protected).",dupBlock:"Identical content is already assigned to another requirement.",
     confirm:"Reset all matches and expiry dates?",done:"Package downloaded: ",suggested:n=>n+" match(es) suggested.",noSug:"No confident suggestions found.",
     needReq:"Load requirements first",missingDocs:"Missing required documents",expNeeded:"Expiry date required",expiredDocs:"Expired documents"},
-  bn: {tag:"স্মার্ট টেন্ডার প্যাকেজ বিল্ডার",loadReq:"requirements.json লোড করুন",loadReqHint:"ফাইলটি এখানে ছাড়ুন বা ক্লিক করুন",upload:"PDF ডকুমেন্ট আপলোড করুন",uploadHint:"সর্বোচ্চ ৩০টি PDF (মোট ৫০ MB) ছাড়ুন বা ক্লিক করুন",reset:"রিসেট",suggest:"মিল প্রস্তাব করুন",gen:"প্যাকেজ তৈরি করুন",
+  bn: {tag:"স্মার্ট টেন্ডার ডকুমেন্ট প্যাকেজ বিল্ডার",loadReq:"requirements.json লোড করুন",loadReqHint:"ফাইলটি এখানে ছাড়ুন বা ক্লিক করুন",upload:"PDF ডকুমেন্ট আপলোড করুন",uploadHint:"সর্বোচ্চ ৩০টি PDF (মোট ৫০ MB) ছাড়ুন বা ক্লিক করুন",reset:"রিসেট",suggest:"মিল প্রস্তাব করুন",gen:"প্যাকেজ তৈরি করুন",
     steps:["প্রয়োজনীয়তা","আপলোড","মিলান","যাচাই","তৈরি"],tid:"টেন্ডার আইডি",ttl:"টেন্ডারের শিরোনাম",ent:"ক্রয়কারী প্রতিষ্ঠান",bid:"দরদাতা",dl:"জমার শেষ তারিখ",
-    k:["মোট প্রয়োজনীয়তা","বাধ্যতামূলক","মিলানো হয়েছে","বাধাদায়ক সমস্যা","প্রস্তুত"],h:["#","ডকুমেন্ট","প্রয়োজনীয়তা","ফাইল","মেয়াদ","অবস্থা"],
+    k:["মোট প্রয়োজনীয়তা","বাধ্যতামূলক","মিলানো হয়েছে","বাধাদায়ক সমস্যা","প্রস্তুত"],h:["ক্রম","ডকুমেন্ট","প্রয়োজনীয়তা","মিলানো ফাইল","মেয়াদ","অবস্থা","কাজ"],
     mand:"বাধ্যতামূলক",opt:"ঐচ্ছিক",exp:"মেয়াদ প্রয়োজন",none:"— মিলানো হয়নি —",
     st:{Missing:"অনুপস্থিত",ExpiryNeeded:"মেয়াদের তারিখ প্রয়োজন",Expired:"মেয়াদোত্তীর্ণ",NotProvided:"দেওয়া হয়নি",OK:"ঠিক আছে"},
     ready:"প্রস্তুত",notready:"প্রস্তুত নয়",readyTxt:"সব যাচাই সম্পন্ন। এখন প্যাকেজ তৈরি করতে পারেন।",blocking:n=>n+"টি বাধাদায়ক সমস্যা",
-    empty:"শুরু করতে requirements.json লোড করুন।",noFiles:"এখনও কোনো PDF নেই। আপলোড করুন।",
+    empty:"শুরু করতে requirements.json লোড করুন।",undo:"পূর্বাবস্থা",expLabel:"মেয়াদের তারিখ",sub:"জমা দেওয়ার উপযোগী টেন্ডার প্যাকেজ প্রস্তুত, যাচাই ও তৈরি করুন।",genH:"প্যাকেজ সফলভাবে তৈরি হয়েছে",fn:"ফাইলের নাম",pg:"পৃষ্ঠা",dc:"ডকুমেন্ট",dlb:"প্যাকেজ ডাউনলোড করুন",cls:"বন্ধ করুন",gen2:"তৈরি হয়েছে",rg:"তৈরির জন্য প্রস্তুত",stM:"অনুপস্থিত",stE:"মেয়াদের সমস্যা",validF:"বৈধ",invalidF:"অবৈধ",mtd:"মিলানো",noFiles:"এখনও কোনো PDF নেই। আপলোড করুন।",
     matched:"মিলানো →",unmatched:"মিলানো হয়নি",dup:"ডুপ্লিকেট",pages:"পৃষ্ঠা",remove:"মুছুন",
     sel:(n,s)=>n+" / ৩০ ফাইল · "+s+" MB / ৫০ MB",
     errJson:"requirements.json অবৈধ: ",notPdf:" PDF নয়, তাই বাতিল।",tooMany:"সর্বোচ্চ ৩০টি ফাইল। অতিরিক্ত ফাইল বাতিল।",tooBig:"মোট ৫০ MB সীমা অতিক্রম। বাতিল ফাইল: ",
@@ -27,11 +27,16 @@ const T = {
     confirm:"সব মিল ও মেয়াদের তারিখ মুছে ফেলবেন?",done:"প্যাকেজ ডাউনলোড হয়েছে: ",suggested:n=>n+"টি মিল প্রস্তাব করা হয়েছে।",noSug:"নিশ্চিত কোনো প্রস্তাব নেই।",
     needReq:"আগে requirements লোড করুন",missingDocs:"বাধ্যতামূলক ডকুমেন্ট অনুপস্থিত",expNeeded:"মেয়াদের তারিখ প্রয়োজন",expiredDocs:"মেয়াদোত্তীর্ণ ডকুমেন্ট"}
 };
-const S = {lang:"en", tender:null, reqs:[], files:[], match:{}, expiry:{}, seq:0};
+const S = {lang:"en", tender:null, reqs:[], files:[], match:{}, expiry:{}, seq:0, out:null, pk:[]};
 const $ = s => document.querySelector(s);
 const t = () => T[S.lang];
 const esc = x => String(x).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const validDate = d => typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d) && !isNaN(new Date(d + "T00:00:00Z")) && new Date(d + "T00:00:00Z").toISOString().slice(0,10) === d;
+const validDate = d => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(typeof d === "string" ? d : ""); if (!m) return false; const mo = +m[2], da = +m[3]; return +m[1] >= 1900 && mo >= 1 && mo <= 12 && da >= 1 && da <= new Date(Date.UTC(+m[1], mo, 0)).getUTCDate(); };
+const MO = {en:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"], bn:["জানু","ফেব","মার্চ","এপ্রি","মে","জুন","জুলাই","আগ","সেপ","অক্টো","নভে","ডিসে"]};
+const fmtDate = d => validDate(d) ? (+d.slice(8)) + " " + MO[S.lang][+d.slice(5, 7) - 1] + " " + d.slice(0, 4) : "";
+let keepTable = false;
+const ICON = {OK:"✓ ",Missing:"! ",Expired:"✕ ",ExpiryNeeded:"⚠ ",NotProvided:"○ "};
+const sig = () => JSON.stringify([S.match, S.expiry]);
 let toastTimer;
 function toast(msg, err) {
   const el = $("#toast"); el.textContent = msg; el.className = "show" + (err ? " err" : "");
@@ -138,19 +143,25 @@ function suggest() {
 
 /* ---------- render ---------- */
 function render() {
-  const L = t(), st = stats();
+  const L = t(), st = stats(), ready = S.reqs.length && !st.block, gen = !!(ready && S.out && S.out.sig === sig());
   document.documentElement.lang = S.lang;
   document.querySelectorAll("[data-i]").forEach(e => e.textContent = L[e.dataset.i]);
   document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("on", b.dataset.l === S.lang));
   $("#tid").textContent = S.tender ? S.tender.tender_id : "—";
-  const step = !S.tender ? 0 : !S.files.length ? 1 : !st.matched ? 2 : st.block ? 3 : 4;
-  $("#steps").innerHTML = L.steps.map((s, i) => `<li class="${i < step ? "done" : i === step ? "on" : ""}">${i < step ? "✓" : "0" + (i + 1)} ${s}</li>`).join("");
+  $("#hs").textContent = gen ? "✓ " + L.gen2 : ready ? "✓ " + L.rg : "⚠ " + L.notready;
+  const dn = [!!S.tender, !!S.tender && S.files.length > 0, st.matched > 0, !!ready && st.matched > 0, gen], cur = dn.indexOf(false);
+  $("#steps").innerHTML = L.steps.map((s, i) => { const c = dn[i] ? "done" : i === 3 && st.matched > 0 && st.block ? "blocked" : i === cur ? "on" : "";
+    return `<li class="${c}" ${i === cur ? 'aria-current="step"' : ""}>${c === "done" ? "✓" : c === "blocked" ? "!" : "0" + (i + 1)} ${s}</li>`; }).join("");
   const tn = S.tender;
-  $("#tender").innerHTML = tn ? [["tid", tn.tender_id], ["ttl", tn.title], ["ent", tn.procuring_entity], ["bid", tn.bidder], ["dl", tn.submission_deadline]]
+  $("#tender").innerHTML = tn ? [["tid", tn.tender_id], ["ttl", tn.title], ["ent", tn.procuring_entity], ["bid", tn.bidder], ["dl", fmtDate(tn.submission_deadline)]]
     .map(([k, v]) => `<div><small>${L[k]}</small><b>${esc(v)}</b></div>`).join("") : `<span class="muted">${L.empty}</span>`;
   const kv = [st.total, st.mand, st.matched, st.block, st.ok];
-  $("#kpis").innerHTML = kv.map((v, i) => `<div class="kpi ${i === 3 && v ? "bad" : ""}"><b>${v}</b>${L.k[i]}</div>`).join("");
-  $("#table").innerHTML = !S.reqs.length ? `<p class="muted">${L.empty}</p>` :
+  const ic = ["▤", "★", "⇄", "⚠", "✓"];
+  $("#kpis").innerHTML = kv.map((v, i) => `<div class="kpi ${i === 3 ? "big" + (v ? " bad" : "") : i === 4 ? "big" : ""}"><i class="ic" aria-hidden="true">${ic[i]}</i><b data-v="${v}">${v}</b>${L.k[i]}</div>`).join("");
+  document.querySelectorAll(".kpi b").forEach((b, i) => { const to = +b.dataset.v, from = S.pk[i] === undefined ? to : S.pk[i]; S.pk[i] = to;
+    if (from === to || matchMedia("(prefers-reduced-motion:reduce)").matches) return; const t0 = performance.now();
+    (function f(now) { const p = Math.min(1, (now - t0) / 300); b.textContent = Math.round(from + (to - from) * p); if (p < 1) requestAnimationFrame(f); })(t0); });
+  if (!keepTable) $("#table").innerHTML = !S.reqs.length ? `<p class="muted">${L.empty}</p>` :
     `<table><thead><tr>${L.h.map(h => `<th>${h}</th>`).join("")}</tr></thead><tbody>${S.reqs.map((r, i) => {
       const s = st.sts[i], mf = S.match[r.id];
       const opts = S.files.filter(f => !f.error && (f.id === mf || !usedElsewhere(f, r.id) && !Object.values(S.match).includes(f.id)))
@@ -159,20 +170,21 @@ function render() {
       return `<tr><td><span class="n">${r.order}</span></td><td><b>📄 ${esc(dis)}</b><br><small class="muted">${esc(r.id)}</small></td>
       <td><span class="badge ${r.mandatory ? "m" : ""}">${r.mandatory ? L.mand : L.opt}</span>${r.has_expiry ? ` <span class="badge">${L.exp}</span>` : ""}</td>
       <td><select data-r="${esc(r.id)}"><option value="">${L.none}</option>${opts}</select></td>
-      <td>${r.has_expiry && mf ? `<input type="date" data-e="${esc(r.id)}" value="${esc(S.expiry[r.id] || "")}">` : "—"}</td>
-      <td><span class="st ${s}">${{OK:"✔ ",Missing:"✖ ",Expired:"✖ ",ExpiryNeeded:"⚠ ",NotProvided:"○ "}[s]}${L.st[s]}</span></td></tr>`;
+      <td>${r.has_expiry && mf ? `<label class="dl"><span class="sr">${L.expLabel}: ${esc(dis)}</span><input type="date" data-e="${esc(r.id)}" value="${esc(S.expiry[r.id] || "")}"></label>${validDate(S.expiry[r.id]) ? `<small class="muted">${fmtDate(S.expiry[r.id])}</small>` : ""}` : "—"}</td>
+      <td><span class="st ${s}">${ICON[s]}${L.st[s]}</span></td><td>${mf ? `<button class="mini" data-undo="${esc(r.id)}">↺ ${L.undo}</button>` : ""}</td></tr>`;
     }).join("")}</tbody></table>`;
-  const ready = S.reqs.length && !st.block;
-  $("#health").className = "card health" + (ready ? " ready" : "");
-  $("#health").innerHTML = `<h3>${ready ? "✔ " + L.ready : "⚠ " + L.notready}</h3><p class="muted">${ready ? L.readyTxt :
-    S.reqs.length ? [st.miss && L.missingDocs, st.need && L.expNeeded, st.exp && L.expiredDocs].filter(Boolean).join(" · ") : L.needReq}</p>`;
+  const names = k => S.reqs.filter((r, i) => k.includes(st.sts[i])).map(r => esc(S.lang === "bn" ? r.title_bn : r.title_en)).join(", ");
+  const pct = st.total ? Math.round((st.total - st.block) / st.total * 100) : 0;
+  $("#health").className = "card health" + (gen ? " gen" : ready ? " ready" : "");
+  $("#health").innerHTML = `<h3>${gen ? "✓ " + L.gen2 : ready ? "✓ " + L.rg : "⚠ " + L.notready}</h3>` + (ready ? `<p class="muted">${L.readyTxt}</p>` : S.reqs.length ? `<p><b>${L.blocking(st.block)}</b></p>` + (st.miss ? `<p class="muted">${L.stM}: ${names(["Missing"])}</p>` : "") + (st.need + st.exp ? `<p class="muted">${L.stE}: ${names(["ExpiryNeeded", "Expired"])}</p>` : "") : `<p class="muted">${L.needReq}</p>`)
+    + `<div class="meter" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><i style="width:${pct}%"></i></div>`;
   const mb = (S.files.reduce((a, f) => a + f.size, 0) / 1048576).toFixed(1);
-  $("#totals").textContent = L.sel(S.files.length, mb);
+  $("#totals").innerHTML = L.sel(S.files.length, mb) + `<div class="meter"><i style="width:${Math.min(100, mb * 2)}%"></i></div>`;
   $("#files").innerHTML = S.files.length ? S.files.map(f => {
     const r = S.reqs.find(q => S.match[q.id] === f.id);
     return `<div class="file ${f.error ? "bad" : ""}"><span class="pdf">PDF</span><div><b title="${esc(f.name)}">${esc(f.name)}</b>
     <small class="muted">${f.error ? L.bad : f.pages + " " + L.pages + " · " + (f.size / 1024).toFixed(0) + " KB"}</small>
-    ${isDup(f) ? ` <span class="badge dup">${L.dup}</span>` : ""}<br><small>${r ? L.matched + " " + esc(S.lang === "bn" ? r.title_bn : r.title_en) : L.unmatched}</small></div>
+    ${f.error ? `<span class="badge m">! ${L.invalidF}</span>` : `<span class="badge okb">✓ ${L.validF}</span>`}${isDup(f) ? ` <span class="badge dup">⚠ ${L.dup}</span>` : ""}${r ? ` <span class="badge mt">↔ ${L.mtd}</span>` : ""}<br><small>${r ? L.matched + " " + esc(S.lang === "bn" ? r.title_bn : r.title_en) : L.unmatched}</small></div>
     <button class="x" data-rm="${f.id}" title="${L.remove}" aria-label="${L.remove}">✕</button></div>`;
   }).join("") : `<p class="muted">${L.noFiles}</p>`;
   const g = $("#gen"); g.disabled = !ready;
@@ -229,9 +241,9 @@ async function generate() {
     });
     const blob = new Blob([await out.save()], {type: "application/pdf"});
     const name = tn.tender_id.replace(/[\\/:*?"<>|]/g, "_") + "_Package.pdf";
-    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name;
-    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
-    toast(t().done + name);
+    if (S.out) URL.revokeObjectURL(S.out.url);
+    S.out = {url: URL.createObjectURL(blob), name, pages: total, docs: inc.length, sig: sig()};
+    render(); showModal();
   } catch (e) { toast("PDF error: " + e.message, true); }
   render();
 }
@@ -248,7 +260,17 @@ zone("#reqDrop", l => l[0] && loadReq(l[0]));
 zone("#pdfDrop", addFiles);
 $("#table").addEventListener("change", e => {
   if (e.target.dataset.r !== undefined) setMatch(e.target.dataset.r, e.target.value);
-  if (e.target.dataset.e !== undefined) { S.expiry[e.target.dataset.e] = e.target.value; render(); }
+  if (e.target.dataset.e !== undefined) {
+    const id = e.target.dataset.e; S.expiry[id] = e.target.value;
+    keepTable = true; render(); keepTable = false;
+    const r = S.reqs.find(q => q.id === id), tr = e.target.closest("tr");
+    if (r && tr) {
+      const s = status(r), el = tr.querySelector(".st"); el.className = "st " + s; el.textContent = ICON[s] + t().st[s];
+      const lab = tr.querySelector("label.dl"); let sm = lab.nextElementSibling;
+      if (validDate(e.target.value)) { if (!sm) { sm = document.createElement("small"); sm.className = "muted"; lab.after(sm); } sm.textContent = fmtDate(e.target.value); }
+      else if (sm) sm.remove();
+    }
+  }
 });
 $("#files").addEventListener("click", e => { const b = e.target.closest("[data-rm]"); if (b) removeFile(+b.dataset.rm); });
 document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => { S.lang = b.dataset.l; render(); }));
@@ -257,4 +279,11 @@ $("#suggest").addEventListener("click", suggest);
 $("#gen").addEventListener("click", generate);
 window.addEventListener("dragover", e => e.preventDefault());
 window.addEventListener("drop", e => e.preventDefault());
+$("#table").addEventListener("click", e => { const b = e.target.closest("[data-undo]"); if (b) setMatch(b.dataset.undo, ""); });
+function showModal() {
+  const L = t(), o = S.out, m = $("#modal");
+  m.innerHTML = `<div class="dlg" role="dialog" aria-modal="true" aria-labelledby="mh"><div class="tick">✓</div><h2 id="mh">${L.genH}</h2><dl><dt>${L.fn}</dt><dd>${esc(o.name)}</dd><dt>${L.pg}</dt><dd>${o.pages}</dd><dt>${L.dc}</dt><dd>${o.docs}</dd></dl><a class="primary" href="${o.url}" download="${esc(o.name)}">${L.dlb}</a> <button class="ghost" id="mc">${L.cls}</button></div>`;
+  m.className = "show"; $("#mc").onclick = () => m.className = ""; m.querySelector("a").focus();
+}
+document.addEventListener("keydown", e => { if (e.key === "Escape") $("#modal").className = ""; });
 render();
